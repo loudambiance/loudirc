@@ -1,0 +1,304 @@
+﻿<Window x:Class="lbirc.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lbirc"
+        mc:Ignorable="d"
+        Title="DaBestIRC" Height="479.333" Width="749" Background="#FF232323" BorderBrush="#FF232323">
+    <Window.Resources>
+        <SolidColorBrush x:Key="RedBrush" Color="#FF232323"/>
+
+        <SolidColorBrush x:Key="SolidBorderBrush" Color="#FF5D5D5D" />
+
+        <SolidColorBrush x:Key="GreenBrush" Color="#FF5D5D5D" />
+
+        <SolidColorBrush x:Key="DisabledBackgroundBrush" Color="#EEE" />
+
+        <SolidColorBrush x:Key="DisabledBorderBrush" Color="#AAA" />
+
+        <SolidColorBrush x:Key="DisabledForegroundBrush" Color="#888" />
+
+        <Style TargetType="{x:Type TabItem}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TabItem}">
+                        <Grid>
+                            <Border 
+                                Name="Border"
+                                Margin="0,0,0,0" 
+                                Background="{StaticResource RedBrush}"
+                                BorderBrush="{StaticResource  SolidBorderBrush}" 
+                                BorderThickness="0,0,0,0">
+                                <ContentPresenter x:Name="ContentSite"
+                                    VerticalAlignment="Center"
+                                    HorizontalAlignment="Center"
+                                    ContentSource="Header"
+                                    Margin="5,2,5,2"
+                                    RecognizesAccessKey="True"/>
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Panel.ZIndex" Value="100" />
+                                <Setter TargetName="Border" Property="Background" Value="{StaticResource GreenBrush}" />
+                                <Setter TargetName="Border" Property="BorderThickness" Value="0,0,0,2" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="Border" Property="Background" Value="{StaticResource DisabledBackgroundBrush}" />
+                                <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource DisabledBorderBrush}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid Background="#FF232323">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TabControl x:Name="tabControl" BorderThickness="0,2,0,0" Background="#FF232323" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" BorderBrush="#FF5D5D5D">
+            <TabItem Header="##proggit" Background="#FF232323" BorderBrush="#FF5D5D5D" Foreground="White" BorderThickness="0,4,0,0" HorizontalAlignment="Left" Width="72" FontSize="11" Margin="0,0,-4,0">
+                <Grid Background="#FF232323">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="18"/>
+                        <RowDefinition/>
+                        <RowDefinition Height="12"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="48*"/>
+                        <ColumnDefinition Width="581*"/>
+                        <ColumnDefinition Width="108"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid HorizontalAlignment="Left" Height="422" VerticalAlignment="Top" Width="737" Grid.ColumnSpan="3" Grid.RowSpan="3"/>
+                    <Label x:Name="label_Copy1" Content="&lt; saml&gt; AHHHHHHM VINDICATED I AM SELFIE" VerticalAlignment="Top" Height="18" Background="#FF232323" Foreground="White" FontSize="11" Padding="2" Grid.ColumnSpan="2" BorderBrush="#FF5D5D5D" BorderThickness="0"/>
+                    <RichTextBox x:Name="richTextBox_Copy1" BorderThickness="0,0,0,2" Background="#FF232323" BorderBrush="#FF5D5D5D" Foreground="White" IsReadOnlyCaretVisible="True" IsReadOnly="True" TextChanged="richTextBox_Copy1_TextChanged" FontSize="14" Grid.Row="1" Grid.ColumnSpan="2">
+                        <FlowDocument>
+                            <Paragraph FontFamily="Consolas" Margin="0">
+                                <Run Text="[16:00:26] "/>
+                                <Run Foreground="#FF919191" Text="*** Joins: burjuz (~0@176.43.140.197)"/>
+                            </Paragraph>
+                            <Paragraph FontFamily="Consolas" Margin="0">
+                                <Run Text="[16:23:51] "/>
+                                <Run Foreground="#FF919191" Text="*** Joins: Genocidicbunny  (~genocidic@99-90-66-139.lightspeed.sntcca.sbcglobal.net)"/>
+                            </Paragraph>
+                            <Paragraph FontFamily="Consolas" Margin="0">
+                                <Run Text="[16:29:27] "/>
+                                <Run Foreground="#FF919191" Text="*** Quits: GeDaMo (~GeDaMo@212.225.118.236) (Remote host closed the connection)"/>
+                            </Paragraph>
+                            <Paragraph FontFamily="Consolas" Margin="0">
+                                <Run Text="[16:42:12] &lt;"/>
+                                <Run Foreground="#FFF7E214" Text="Eiken_"/>
+                                <Run Text="&gt; bye bye Raqqa"/>
+                            </Paragraph>
+                            <Paragraph FontFamily="Consolas" Margin="0">
+                                <Run Text="[16:45:13] "/>
+                                <Run Foreground="#FF919191" Text="*** Joins: earthling_ (~earthling@159.140.254.108)"/>
+                            </Paragraph>
+                            <Paragraph FontFamily="Consolas" Margin="0">
+                                <Run Text="[16:48:07] &lt;"/>
+                                <Run Foreground="#FFE68816" Text="spike"/>
+                                <Run Text="&gt; ri(pain)"/>
+                            </Paragraph>
+                            <Paragraph FontFamily="Consolas" Margin="0">
+                                <Run Text="[16:52:40] "/>
+                                <Run Foreground="#FF919191" Text="*** Joins: Saishruti___ (~earthling@50.247.151.251)"/>
+                            </Paragraph>
+                            <Paragraph FontFamily="Consolas" Margin="0">
+                                <Run Text="[16:52:58] "/>
+                                <Run Foreground="#FF919191" Text="*** Saishruti___ is now known as earthling__"/>
+                            </Paragraph>
+                            <Paragraph FontFamily="Consolas" Margin="0">
+                                <Run Text="[16:53:06] "/>
+                                <Run Foreground="#FF919191" Text="*** Quits: earthling_ (~earthling@159.140.254.108) (Ping timeout: 240 seconds)"/>
+                            </Paragraph>
+                            <Paragraph FontFamily="Consolas" Margin="0">
+                                <Run Text="[16:53:10] "/>
+                                <Run Foreground="#FF919191" Text="*** earthling__ is now known as earthling_"/>
+                            </Paragraph>
+                            <Paragraph FontFamily="Consolas" Margin="0">
+                                <Run Text="[17:58:33] &lt;"/>
+                                <Run Foreground="#FF7AF3DD" Text="quanticle"/>
+                                <Run Text="&gt; null__: Who is sitting next to Obama, with her back turned to the camera?"/>
+                            </Paragraph>
+                            <Paragraph FontFamily="Consolas" Margin="0">
+                                <Run Text="[17:59:48] &lt;"/>
+                                <Run Foreground="#FF7AF3DD" Text="quanticle"/>
+                                <Run Text="&gt; And, for that matter, who is the dude sitting next to Putin? For a sec, I thought it was David Cameron, but it doesn't look like him."/>
+                            </Paragraph>
+                            <Paragraph FontFamily="Consolas" Margin="0">
+                                <Run Text="[18:07:21] &lt;"/>
+                                <Run Foreground="#FFB0B0B0" Text="sixthgear"/>
+                                <Run Text="&gt; helli"/>
+                            </Paragraph>
+                            <Paragraph FontFamily="Consolas" Margin="0">
+                                <Run Text="[18:07:27] &lt;"/>
+                                <Run Foreground="#FFB0B0B0" Text="sixthgear"/>
+                                <Run Text="&gt;     o"/>
+                            </Paragraph>
+                            <Paragraph FontFamily="Consolas" Margin="0">
+                                <Run Text="[18:12:02] &lt;"/>
+                                <Run Foreground="#FF7AF3DD" Text="quanticle"/>
+                                <Run Text="&gt; Hello sixthgear."/>
+                            </Paragraph>
+                            <Paragraph FontFamily="Consolas" Margin="0">
+                                <Run Text="[18:12:13] &lt;"/>
+                                <Run Foreground="#FF588BB6" Text="earthling_"/>
+                                <Run Text="&gt; hi!"/>
+                            </Paragraph>
+                            <Paragraph FontFamily="Consolas" Margin="0">
+                                <Run Text="[18:12:20] &lt;"/>
+                                <Run Foreground="#FF7AF3DD" Text="quanticle"/>
+                                <Run Text="&gt; Hello earthling_."/>
+                            </Paragraph>
+                            <Paragraph FontFamily="Consolas" Margin="0">
+                                <Run Text="[18:12:32] &lt;"/>
+                                <Run Foreground="#FF588BB6" Text="earthling_"/>
+                                <Run Text="&gt; hi quanticle!"/>
+                            </Paragraph>
+                        </FlowDocument>
+                    </RichTextBox>
+                    <Label x:Name="label" Content="&gt;&gt;&gt;" VerticalAlignment="Top" Background="#FF232323" ForceCursor="True" Foreground="#FFACACAC" Height="12" Padding="0" RenderTransformOrigin="6.638,-11.952" Grid.Row="2" FontSize="9" Grid.ColumnSpan="2" BorderThickness="0" BorderBrush="#FF5D5D5D"/>
+                    <TextBox x:Name="textBox" Margin="23,0,0,0" TextWrapping="Wrap" Background="#FF232323" BorderBrush="#FF5D5D5D" BorderThickness="0" Foreground="White" FontSize="10" Grid.Row="2" Grid.ColumnSpan="3"/>
+                    <ListBox x:Name="listBox" HorizontalAlignment="Left" Width="108" Background="#FF232323" BorderBrush="#FF5D5D5D" Foreground="White" BorderThickness="0,0,0,2" SelectionChanged="listBox_SelectionChanged" FontSize="12" Grid.Column="2" Grid.RowSpan="2">
+                        <ListBoxItem Content="@ChanServ" Foreground="#FFB62222"/>
+                        <ListBoxItem Content="burjuz" Foreground="#FF6BA82E" Selected="ListBoxItem_Selected"/>
+                        <ListBoxItem Content="earthling_" Foreground="#FF588BB6"/>
+                        <ListBoxItem Content="Eiken_" Foreground="#FFF7E214"/>
+                        <ListBoxItem Content="Genocidicbunny"/>
+                        <ListBoxItem Content="quanticle" Foreground="#FF7AF3DD"/>
+                        <ListBoxItem Content="sixthgear" Foreground="#FFB0B0B0"/>
+                        <ListBoxItem Content="spike" Foreground="#FFE68816"/>
+                    </ListBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="#verizons3" Background="#FF232323" BorderBrush="#FF5D5D5D" Foreground="#FFF08383" BorderThickness="0,0,0,2" FontSize="11" Grid.IsSharedSizeScope="True">
+                <Grid Background="#FF232323">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="18"/>
+                        <RowDefinition/>
+                        <RowDefinition Height="12"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="108"/>
+                    </Grid.ColumnDefinitions>
+                    <RichTextBox x:Name="richTextBox_Copy2" BorderThickness="0,0,0,2" Background="#FF232323" BorderBrush="#FF5D5D5D" Foreground="White" IsReadOnlyCaretVisible="True" IsReadOnly="True" TextChanged="richTextBox_Copy1_TextChanged" FontSize="14" Grid.Row="1">
+                        <FlowDocument>
+                            <Paragraph FontFamily="Consolas" Margin="0">
+                                <Run Text="[18:44:50] &lt;"/>
+                                <Run Foreground="#FF6BA82E" Text="invisiblek"/>
+                                <Run Text="&gt; line 247 is the magic"/>
+                            </Paragraph>
+                            <Paragraph FontFamily="Consolas" Margin="0">
+                                <Run Text="[18:44:54] &lt;"/>
+                                <Run Foreground="#FF588BB6" Text="noobnl"/>
+                                <Run Text="&gt; WHAT THE FUCKING FUCK ,,"/>
+                            </Paragraph>
+                            <Paragraph FontFamily="Consolas" Margin="0">
+                                <Run Text="[18:45:00] &lt;"/>
+                                <Run Foreground="#FF6BA82E" Text="invisiblek"/>
+                                <Run Text="&gt; (its untested still)"/>
+                            </Paragraph>
+                            <Paragraph FontFamily="Consolas" Margin="0">
+                                <Run Text="[18:45:49] &lt;"/>
+                                <Run Foreground="#FF6BA82E" Text="invisiblek"/>
+                                <Run Text="&gt; "/>
+                                <Run Text=" "/>
+                                <Run Text=" "/>
+                                <Run Text=" "/>
+                                <Run Foreground="#FF02A3FF" Text="https://gist.github.com/invisiblek/3a82c25fd71d31f20dd4#file-ril-java-L2656" TextDecorations="Underline"/>
+                            </Paragraph>
+                            <Paragraph FontFamily="Consolas" Margin="0">
+                                <Run Text="[18:46:28] "/>
+                                <Run Foreground="#FF919191" Text="*** Joins: sbrissen (~sbrissen@cx0.cablexpress.com)"/>
+                            </Paragraph>
+                            <Paragraph FontFamily="Consolas" Margin="0">
+                                <Run Text="[18:46:28] "/>
+                                <Run Foreground="#FF919191" Text="*** ChanServ sets mode: +v sbrissen"/>
+                            </Paragraph>
+                            <Paragraph FontFamily="Consolas" Margin="0">
+                                <Run Text="[18:55:24] "/>
+                                <Run Foreground="#FF919191" Text="*** Quits: [R] (~rbox@unaffiliated/rbox) (Quit: Leaving)"/>
+                            </Paragraph>
+                            <Paragraph FontFamily="Consolas" Margin="0">
+                                <Run Text="[18:59:08] &lt;"/>
+                                <Run Foreground="#FFF7E214" Text="NucWin"/>
+                                <Run Text="&gt; flashing..."/>
+                            </Paragraph>
+                            <Paragraph FontFamily="Consolas" Margin="0">
+                                <Run Text="[19:02:50] "/>
+                                <Run Foreground="#FF919191" Text="*** Quits: sbrissen (~sbrissen@cx0.cablexpress.com) (Ping timeout: 240 seconds)"/>
+                            </Paragraph>
+                            <Paragraph FontFamily="Consolas" Margin="0">
+                                <Run Text="[19:05:56] &lt;"/>
+                                <Run Foreground="#FFF7E214" Text="NucWin"/>
+                                <Run Text="&gt; invisiblek: working \o/ _o/ \o_"/>
+                            </Paragraph>
+                            <Paragraph FontFamily="Consolas" Margin="0">
+                                <Run Text="[19:07:08] "/>
+                                <Run Foreground="#FF919191" Text="*** Quits: Stealth111 (~chatzilla@cpe-76-189-243-86.neo.res.rr.com) (Ping timeout: 252 seconds)"/>
+                            </Paragraph>
+                            <Paragraph FontFamily="Consolas" Margin="0">
+                                <Run Text="[19:07:25] &lt;"/>
+                                <Run Foreground="#FF6BA82E" Text="invisiblek"/>
+                                <Run Text="&gt; NucWin: woot!"/>
+                            </Paragraph>
+                            <Paragraph FontFamily="Consolas" Margin="0">
+                                <Run Text="[19:08:35] &lt;"/>
+                                <Run Foreground="#FFF7E214" Text="NucWin"/>
+                                <Run Text="&gt; good work, thanks for helping me learn stuff too :)"/>
+                            </Paragraph>
+                            <Paragraph FontFamily="Consolas" Margin="0">
+                                <Run Text="[19:09:00] &lt;"/>
+                                <Run Foreground="#FF6BA82E" Text="invisiblek"/>
+                                <Run Text="&gt; =)"/>
+                            </Paragraph>
+                            <Paragraph FontFamily="Consolas" Margin="0">
+                                <Run Text="[19:24:20] &lt;"/>
+                                <Run Foreground="#FFF7E214" Text="NucWin"/>
+                                <Run Text="&gt; damn i was 12sec too slow doing my first +1 :P"/>
+                            </Paragraph>
+                            <Paragraph FontFamily="Consolas" Margin="0">
+                                <Run Text="[19:24:48] &lt;"/>
+                                <Run Foreground="#FFF7E214" Text="NucWin"/>
+                                <Run Text="&gt; did patch set 3 get your device working again?"/>
+                            </Paragraph>
+                            <Paragraph FontFamily="Consolas" Margin="0">
+                                <Run Text="[19:25:54] &lt;"/>
+                                <Run Foreground="#FF6BA82E" Text="invisiblek"/>
+                                <Run Text="&gt; yea, mine will work with that"/>
+                            </Paragraph>
+                            <Paragraph FontFamily="Consolas" Margin="0">
+                                <Run Text="[19:33:17] &lt;"/>
+                                <Run Foreground="#FFF7E214" Text="NucWin"/>
+                                <Run Text="&gt; cant decide if i should setup up from scratch on cm13 or wait for upgrade path before i use as daily driver"/>
+                            </Paragraph>
+                            <Paragraph FontFamily="Consolas" Margin="0">
+                                <Run Text="[19:33:28] &lt;"/>
+                                <Run Foreground="#FFF7E214" Text="NucWin"/>
+                                <Run Text="&gt; quite a lot of work setting it all back up again"/>
+                            </Paragraph>
+                        </FlowDocument>
+                    </RichTextBox>
+                    <Label x:Name="label_Copy3" Content="Welcome to #verizons3. Get a new phone.  (╯°□°)╯︵ ʞǝlqᴉsᴉʌuᴉ :: invisiblek when asked about d2 http://bit.ly/1A3ZhD0 :: http://i.imgur.com/9SkcD8P.gif :: [R]: http://i.imgur.com/2XQ8jRF.png :: when someone else submits a patch to gerrit: http://i.imgur.com/daL3sVc.jpg - &lt;mastamoon&gt; Only samsung and blackberry does leds right." Background="#FF232323" Foreground="White" FontSize="11" Padding="0"/>
+                    <ListBox x:Name="listBox_Copy1" HorizontalAlignment="Left" Width="108" Background="#FF232323" BorderBrush="#FF5D5D5D" Foreground="White" BorderThickness="0,0,0,2" SelectionChanged="listBox_SelectionChanged" FontSize="12" Grid.Column="1" Grid.RowSpan="2">
+                        <ListBoxItem Content="@ChanServ" Foreground="#FFB62222" FontSize="12"/>
+                        <ListBoxItem Content="invisiblek" Foreground="#FF6BA82E" FontSize="12" Selected="ListBoxItem_Selected"/>
+                        <ListBoxItem Content="noobnl" Foreground="#FF588BB6" FontSize="12"/>
+                        <ListBoxItem Content="NucWin" Foreground="#FFF7E214" FontSize="12"/>
+                    </ListBox>
+                    <Label x:Name="label_Copy" Content="&gt;&gt;&gt;" VerticalAlignment="Top" Background="#FF232323" ForceCursor="True" Foreground="#FFACACAC" Height="12" Padding="0" RenderTransformOrigin="6.638,-11.952" Grid.Row="2" FontSize="9" BorderThickness="0" BorderBrush="#FF5D5D5D"/>
+                    <TextBox x:Name="textBox_Copy" Margin="23,0,0,0" TextWrapping="Wrap" Background="#FF232323" BorderBrush="#FF5D5D5D" BorderThickness="0" Foreground="White" FontSize="10" Grid.Row="2" Grid.ColumnSpan="2"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="TabItem" HorizontalAlignment="Left" Height="21" VerticalAlignment="Top" Width="52">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
